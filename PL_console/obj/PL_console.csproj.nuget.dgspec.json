@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/lecuong/Desktop/Project/Nhom4_PF06/PL_console/PL_console.csproj": {}
+  },
+  "projects": {
+    "/Users/lecuong/Desktop/Project/Nhom4_PF06/PL_console/PL_console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lecuong/Desktop/Project/Nhom4_PF06/PL_console/PL_console.csproj",
+        "projectName": "PL_console",
+        "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/PL_console/PL_console.csproj",
+        "packagesPath": "/Users/lecuong/.nuget/packages/",
+        "outputPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/PL_console/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/lecuong/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
