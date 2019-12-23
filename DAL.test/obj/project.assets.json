@@ -5864,11 +5864,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lecuong/Desktop/Project/Nhom4_PF06/DAL.test/DAL.test.csproj",
+      "projectUniqueName": "/Users/lecuong/Desktop/Project/hellokitty/DAL.test/DAL.test.csproj",
       "projectName": "DAL.test",
-      "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/DAL.test/DAL.test.csproj",
+      "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/DAL.test/DAL.test.csproj",
       "packagesPath": "/Users/lecuong/.nuget/packages/",
-      "outputPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/DAL.test/obj/",
+      "outputPath": "/Users/lecuong/Desktop/Project/hellokitty/DAL.test/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
