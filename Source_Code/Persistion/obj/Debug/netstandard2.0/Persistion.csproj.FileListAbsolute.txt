@@ -1,0 +1,9 @@
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/bin/Debug/netstandard2.0/Persistion.deps.json
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/bin/Debug/netstandard2.0/Persistion.dll
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/bin/Debug/netstandard2.0/Persistion.pdb
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.csprojAssemblyReference.cache
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.csproj.CoreCompileInputs.cache
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.AssemblyInfoInputs.cache
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.AssemblyInfo.cs
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.dll
+/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/Debug/netstandard2.0/Persistion.pdb

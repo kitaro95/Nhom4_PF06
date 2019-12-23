@@ -1,0 +1,14 @@
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/BL.deps.json
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/BL.dll
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/BL.pdb
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/DAL.dll
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/Persistion.dll
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/DAL.pdb
+/Users/lecuong/Desktop/Project/hellokitty/BL/bin/Debug/netstandard2.0/Persistion.pdb
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.csprojAssemblyReference.cache
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.csproj.CoreCompileInputs.cache
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.AssemblyInfoInputs.cache
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.AssemblyInfo.cs
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.csproj.CopyComplete
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.dll
+/Users/lecuong/Desktop/Project/hellokitty/BL/obj/Debug/netstandard2.0/BL.pdb
