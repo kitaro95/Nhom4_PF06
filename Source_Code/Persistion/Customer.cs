@@ -12,5 +12,6 @@ namespace Persistion
         public DateTime CustomerBirthday {get;set;}
         public string CustomerName {get;set;}
         public string CustomerGender {get;set;}
+        public string CustomerPassword {get;set;}
     }
 }

@@ -4770,11 +4770,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lecuong/Desktop/Project/hellokitty/PL_Console/PL_Console.csproj",
+      "projectUniqueName": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/PL_Console/PL_Console.csproj",
       "projectName": "PL_Console",
-      "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/PL_Console/PL_Console.csproj",
+      "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/PL_Console/PL_Console.csproj",
       "packagesPath": "/Users/lecuong/.nuget/packages/",
-      "outputPath": "/Users/lecuong/Desktop/Project/hellokitty/PL_Console/obj/",
+      "outputPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/PL_Console/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -4791,11 +4791,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/lecuong/Desktop/Project/hellokitty/BL/BL.csproj": {
-              "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/BL/BL.csproj"
+            "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/BL/BL.csproj": {
+              "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/BL/BL.csproj"
             },
-            "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj": {
-              "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj"
+            "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj": {
+              "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj"
             }
           }
         }

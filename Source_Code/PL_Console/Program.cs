@@ -11,6 +11,7 @@ namespace PL_Console
         {
             //string select;
             int mobiID;
+            string username,email,password;
             Console.WriteLine("Welcome to Mobile World !!! \n");
            
             // System.Console.WriteLine("Enter Select : ");
@@ -37,6 +38,30 @@ namespace PL_Console
              table.AddRow(item.MobileID,item.MobileName,item.MobileRAM,item.MobileCamera,item.MobileStorage);
             }
             table.Write(Format.Alternative);
+
+            Console.WriteLine("Welcome to Mobile World !!! \n");
+            System.Console.WriteLine("Nhap tai khoan va mat khau");
+            System.Console.WriteLine("Tai khoan : ");
+            username = Console.ReadLine();
+            System.Console.WriteLine("Mat khau : ");
+            password = Console.ReadLine();
+            System.Console.WriteLine("Email: ");
+            email = Console.ReadLine();
+            CustomerBL custBL = new CustomerBL();
+            int flag = custBL.VerifyRegister(username,email);
+             if (flag == 2)
+             {
+               custBL.Register(username,password,email);
+             }
+            
+            System.Console.WriteLine("Nhap tai khoan va mat khau");
+            System.Console.WriteLine("Tai khoan : ");
+            username = Console.ReadLine();
+            System.Console.WriteLine("Mat khau : ");
+            password = Console.ReadLine();
+            CustomerBL custBL1 = new CustomerBL();
+            Customer cust = custBL1.VerifyCustomer(username,password);
+            
 
 
         }

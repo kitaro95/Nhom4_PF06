@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lecuong/Desktop/Project/hellokitty/DAL/DAL.csproj": {}
+    "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/DAL/DAL.csproj": {}
   },
   "projects": {
-    "/Users/lecuong/Desktop/Project/hellokitty/DAL/DAL.csproj": {
+    "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/DAL/DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lecuong/Desktop/Project/hellokitty/DAL/DAL.csproj",
+        "projectUniqueName": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/DAL/DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/DAL/DAL.csproj",
+        "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/DAL/DAL.csproj",
         "packagesPath": "/Users/lecuong/.nuget/packages/",
-        "outputPath": "/Users/lecuong/Desktop/Project/hellokitty/DAL/obj/",
+        "outputPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/DAL/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -28,8 +28,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj": {
-                "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj"
+              "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj": {
+                "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj": {
+    "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj",
+        "projectUniqueName": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj",
         "projectName": "Persistion",
-        "projectPath": "/Users/lecuong/Desktop/Project/hellokitty/Persistion/Persistion.csproj",
+        "projectPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/Persistion.csproj",
         "packagesPath": "/Users/lecuong/.nuget/packages/",
-        "outputPath": "/Users/lecuong/Desktop/Project/hellokitty/Persistion/obj/",
+        "outputPath": "/Users/lecuong/Desktop/Project/Nhom4_PF06/Source_Code/Persistion/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
