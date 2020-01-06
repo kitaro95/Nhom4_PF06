@@ -10,87 +10,104 @@ namespace DAL
         private MySqlConnection connection;
         public CustomerDAL()
         {
-         connection = DatabaseAccess.OpenConnection();
+            connection = DatabaseAccess.OpenConnection();
 
         }
-        public Customer VerifyCustomer(string CustomerUsername, string CustomerPassword)
+        public int VerifyLogin(string CustomerUsername, string CustomerPassword)
         {
-            query = @"Select * from Customer where Username = '"+ CustomerUsername+ "' and Password ='"+CustomerPassword+"';";
-            MySqlCommand command = new MySqlCommand(query,connection);
+            int b;
+            query = @"Select * from Customer where Customer_Username = '" + CustomerUsername + "' and Customer_password ='" + CustomerPassword + "';";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                System.Console.WriteLine("Đăng nhập thành công");
+                b = 1;;
+        
+            }
+            else
+            {
+                System.Console.WriteLine("Sai tên đăng nhập hoặc mật khẩu");
+                b = 0;
+            }
+            reader.Close();
+            DatabaseAccess.CloseConnection();
+            return b;
+
+        }
+        public Customer GetCustomer(string CustomerUsername)
+        {
+           
+            DatabaseAccess.OpenConnection();
+            query = @"Select * from Customer where Customer_Username = '" + CustomerUsername + "';";
+            MySqlCommand command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             Customer customer = null;
             if (reader.Read())
             {
-                System.Console.WriteLine("dang nhap thanh cong");
                 customer = GetCustomerInfo(reader);
-                
-            }
-            else
-            {
-              System.Console.WriteLine("Sai ten dang nhap hoac mat khau");
             }
             reader.Close();
+            
             DatabaseAccess.CloseConnection();
             return customer;
-
+            
+            
         }
         private Customer GetCustomerInfo(MySqlDataReader reader)
         {
-            Customer cust = new Customer();
-            if (!reader.IsDBNull(1) )
-            {
-                System.Console.WriteLine("abcd");
-            cust.CustomerEmail = reader.GetString("Email");
+            Customer custom = new Customer();
 
-            }
-            cust.CustomerEmail = "";
-            cust.CustomerUsername = reader.GetString("Username");
-            cust.CustomerGender = reader.GetString("Gender");
-            cust.CustomerID = reader.GetInt32("CustomerID");
-            cust.CustomerName = reader.GetString("Name");
-            cust.CustomerBirthday = reader.GetDateTime("Birthday");
-            cust.CustomerPhonenumber = reader.GetString("Phonenumber");
-            cust.CustomerAddress = reader.GetString("Address");
-            cust.CustomerPassword = reader.GetString("Password");
-            return cust;
+            custom.CustomerEmail = reader.GetString("Customer_email");
+            custom.CustomerUsername = reader.GetString("Customer_Username");
+            custom.CustomerCMT = reader.GetInt32("Customer_CMT");
+            custom.CustomerID = reader.GetInt32("Customer_id");
+            custom.CustomerName = reader.GetString("Customer_Name");
+            custom.CustomerAge = reader.GetInt32("Customer_Age");
+            custom.CustomerPhonenumber = reader.GetInt32("Customer_Phone");
+            custom.CustomerAddress = reader.GetString("Customer_address");
+            custom.CustomerPassword = reader.GetString("Customer_password");
+            return custom;
+
         }
-        public int VerifyRegister(string Username,string Email)
+        public int VerifyRegister(string Username, string Email)
         {
             int a;
-            query = @"Select * from Customer where Username = '"+ Username+ "' or Email ='"+Email+"';";
-            MySqlCommand command = new MySqlCommand(query,connection);
+            query = @"Select * from Customer where Customer_Username = '" + Username + "' or Customer_email ='" + Email + "';";
+            MySqlCommand command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             if (reader.Read())
             {
-                System.Console.WriteLine("tai khoan hoac email da ton tai");
+                System.Console.WriteLine("Tài khoản hoặc email đã tồn tại\n");
                 a = 1;
             }
             else
             {
-              System.Console.WriteLine("dang ky thanh cong");
-              a = 2;
+                System.Console.WriteLine("Bạn có thể sử dụng tài khoản và email này\n");
+                a = 2;
             }
             reader.Close();
             DatabaseAccess.CloseConnection();
             return a;
         }
-        public int Register(string Username, string Password, string Email)
+        public int Register(string Username, string Password, string Email,string Address,string Name,int Age,int Phonenumber,int CMT)
         {
             try
             {
                 DatabaseAccess.OpenConnection();
-            query =@"insert into Customer(Username,Password,Email) values ('"+Username+"','"+Password+"','"+Email+"');";
-            MySqlCommand command = new MySqlCommand(query,connection);
-            command.ExecuteNonQuery();
+                query = @"insert into Customer(Customer_Username,Customer_password,Customer_email,Customer_address,Customer_Name,Customer_Age,Customer_Phone,Customer_CMT)
+                values ('" + Username + "','" + Password + "','" + Email + "','"+Address+"','"+Name+"',"+Age+","+Phonenumber+","+CMT+");";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
             }
-            catch{}
+            catch { }
             finally
             {
-            DatabaseAccess.CloseConnection();
+                DatabaseAccess.CloseConnection();
             }
-            return 100;
+            return 10;
         }
     }
 
-   
+
 }

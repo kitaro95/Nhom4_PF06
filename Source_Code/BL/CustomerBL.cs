@@ -10,19 +10,24 @@ namespace BL
 
         public CustomerBL()
         {
-            customerDAL = new CustomerDAL(); 
+            customerDAL = new CustomerDAL();
         }
-        public Customer VerifyCustomer(string CustomerUsername, string CustomerPassword)
+        public int VerifyLogin(string CustomerUsername, string CustomerPassword)
         {
-            return customerDAL.VerifyCustomer(CustomerUsername,CustomerPassword);
+            return customerDAL.VerifyLogin(CustomerUsername, CustomerPassword);
         }
+        public Customer GetCustomer(string CustomerUsername)
+        {
+            return customerDAL.GetCustomer(CustomerUsername);
+        }
+
         public int VerifyRegister(string Username, string Email)
         {
-            return customerDAL.VerifyRegister(Username,Email);
+            return customerDAL.VerifyRegister(Username, Email);
         }
-        public int Register(string Username, string Password, string Email)
+        public int Register(string Username, string Password, string Email, string Address, string Name, int Age, int Phonenumber, int CMT)
         {
-           return customerDAL.Register(Username,Password,Email);
+            return customerDAL.Register(Username, Password, Email, Address, Name, Age, Phonenumber, CMT);
         }
     }
 

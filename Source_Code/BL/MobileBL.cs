@@ -14,12 +14,16 @@ namespace BL
             mobileDAL = new MobileDAL();
         }
         public Mobile GetMobilebyId(int MobileID)
-        { 
-           return mobileDAL.GetMobilebyId(MobileID);
+        {
+            return mobileDAL.GetMobilebyId(MobileID);
         }
         public List<Mobile> GetListMobile()
         {
             return mobileDAL.GetListMobile();
+        }
+        public List<Mobile> GetMobilebyName(string MobileName)
+        {
+            return mobileDAL.GetMobilebyName(MobileName);
         }
     }
 }

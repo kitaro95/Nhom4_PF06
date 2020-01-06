@@ -17,8 +17,8 @@ namespace DAL
 
         public Mobile GetMobilebyId(int MobileID)
         {
-            query = @"Select * from Mobiles where Mobile_id = " + MobileID+ ";";
-            MySqlCommand command= new MySqlCommand(query,connection);
+            query = @"Select * from Mobile where Mobile_id = " + MobileID + ";";
+            MySqlCommand command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             Mobile mobile = null;
             if (reader.Read())
@@ -30,14 +30,18 @@ namespace DAL
             return mobile;
         }
 
-        private Mobile GetMobileDetail (MySqlDataReader reader)
+        private Mobile GetMobileDetail(MySqlDataReader reader)
         {
             Mobile mobi = new Mobile();
             mobi.MobileID = reader.GetInt32("Mobile_id");
-            mobi.MobileName = reader.GetString("M_Name");
-            mobi.MobileRAM = reader.GetString("M_RAM");
-            mobi.MobileCamera = reader.GetString("M_Camera");
-            mobi.MobileStorage = reader.GetString("M_Storage");
+            mobi.MobileName = reader.GetString("Mobile_name");
+            mobi.MobileRAM = reader.GetString("Mobile_RAM");
+            mobi.MobileCamera = reader.GetString("Mobile_Camera");
+            mobi.MobileCPU = reader.GetString("Mobile_CPU");
+            mobi.MobilePrice = reader.GetDecimal("Mobile_Price");
+            mobi.MobileScreen = reader.GetString("Mobile_Screen");
+            mobi.MobileTradeMack = reader.GetString("Mobile_Trademack");
+            mobi.MobileQuantity = reader.GetInt32("Mobile_quantity");
             return mobi;
         }
         public List<Mobile> GetListMobile()
@@ -46,8 +50,26 @@ namespace DAL
             {
                 connection.Open();
             }
-            query = @"select Mobile_id,M_Name,M_RAM,M_Camera,M_Storage from mobiles;";
-            MySqlCommand command = new MySqlCommand(query,connection);
+            query = @"select * from Mobile;";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            reader = command.ExecuteReader();
+            List<Mobile> listMobiles = new List<Mobile>();
+            if (reader != null)
+            {
+                listMobiles = GetListMobiles(command);
+            }
+            reader.Close();
+            DatabaseAccess.CloseConnection();
+            return listMobiles;
+        }
+        public List<Mobile> GetMobilebyName(string MobileName)
+        {
+            if (connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+            query = @"select * from Mobile where Mobile_name like '%" + MobileName + "%';";
+            MySqlCommand command = new MySqlCommand(query, connection);
             reader = command.ExecuteReader();
             List<Mobile> listMobiles = new List<Mobile>();
             if (reader != null)
@@ -68,5 +90,6 @@ namespace DAL
             connection.Close();
             return listMobiles;
         }
+
     }
 }

@@ -1,55 +1,106 @@
 using System;
-
+using System.Collections.Generic;
+using BL;
+using Persistion;
+using ConsoleTables;
+using DAL;
 namespace PL_Console
 {
-    class menu
+    class Menu
     {
-        public void mainmenuguest()
+        string select;
+        public void mainmenu()
         {
-            System.Console.WriteLine("MAIN MENU");
+            System.Console.WriteLine("\nMENU");
             System.Console.WriteLine("-----------------------------");
-            System.Console.WriteLine("1.Account Management");
-            System.Console.WriteLine("2.View Mobile Information");
-            System.Console.WriteLine("0.Exit");
-            System.Console.WriteLine("-----------------------------");
+            System.Console.WriteLine("1.Quản lý tài khoản");
+            System.Console.WriteLine("2.Xem thông tin điện thoại");
+            System.Console.WriteLine("0.Thoát ");
+            System.Console.WriteLine("-----------------------------\n");
         }
 
         public void accountmenu()
         {
-            System.Console.WriteLine("Account Managenent");
-            System.Console.WriteLine("-----------------------------");
-            System.Console.WriteLine("1.Login");
-            System.Console.WriteLine("2.Register");
-            System.Console.WriteLine("0.Exit");
-            System.Console.WriteLine("-----------------------------");
+            AccountManage accountManage = new AccountManage();
+            while (true)
+            {
+                System.Console.WriteLine("\nQuản lý tài khoản");
+                System.Console.WriteLine("-----------------------------");
+                System.Console.WriteLine("1.Đăng nhập");
+                System.Console.WriteLine("2.Đăng ký");
+                System.Console.WriteLine("0.Quay lại");
+                System.Console.WriteLine("-----------------------------\n");
+                System.Console.WriteLine("Mời nhập lựa chọn : ");
+                select = Console.ReadLine();
+                if (select == "1")
+                {
+                    accountManage.Login();
+                }
+                else if (select == "2")
+                {
+                    accountManage.Register();
+                }
+                else if (select == "0")
+                {
+                    break;
+                }
+                else
+                {
+                    System.Console.WriteLine("Lựa chọn không tồn tại, mời chọn lại \n");
+
+                }
+            }
         }
         public void mobilemenu()
         {
-            System.Console.WriteLine("View Mobile Information");
-            System.Console.WriteLine("-----------------------------");
-            System.Console.WriteLine("1.View List Mobile");
-            System.Console.WriteLine("2.View Mobile Detail");
-            System.Console.WriteLine("0.Exit");
-            System.Console.WriteLine("-----------------------------");
+            MobileManage mobileManage = new MobileManage();
+            while (true)
+            {
+                System.Console.WriteLine("\nXem thông tin điện thoại");
+                System.Console.WriteLine("-----------------------------");
+                System.Console.WriteLine("1.Xem danh sách điện thoại");
+                System.Console.WriteLine("2.Xem thông tin điện thoại theo tên");
+                System.Console.WriteLine("3.Xem thông tin điện thoại theo mã");
+                System.Console.WriteLine("0.Quay lại");
+                System.Console.WriteLine("-----------------------------\n");
+                System.Console.WriteLine("Mời nhập lựa chọn : ");
+                select = Console.ReadLine();
+                if (select == "1")
+                {
+                    mobileManage.ShowListItem();
+                    System.Console.WriteLine("\nBấm phấm bất kỳ để quay lại");
+                    Console.ReadKey();
+                }
+                else if (select == "2")
+                {
+                    mobileManage.SearchItem();
+                   System.Console.WriteLine("\nBấm phấm bất kỳ để quay lại");
+                   Console.ReadKey();
+                }
+                else if (select == "3")
+                {
+                    mobileManage.ViewItemDetail();
+                    System.Console.WriteLine("\nBấm phấm bất kỳ để quay lại");
+                    Console.ReadKey();
+                }
+                else if (select == "0")
+                {
+                    break;
+                }
+                else
+                {
+                    System.Console.WriteLine("Lựa chọn không tồn tại, mời chọn lại");
+                }
+            }
         }
-        public void cartmenu()
+        public void ordermenu()
         {
-            System.Console.WriteLine("Cart Management");
+            System.Console.WriteLine("\nQuản lý đơn hàng");
             System.Console.WriteLine("-----------------------------");
-            System.Console.WriteLine("1.Add Mobile to Cart");
-            System.Console.WriteLine("2.Edit Cart");
-            System.Console.WriteLine("0.Exit");
-            System.Console.WriteLine("-----------------------------");
-        }
-        public void mainmenumember()
-        {
-            System.Console.WriteLine("MAIN MENU");
-            System.Console.WriteLine("-----------------------------");
-            System.Console.WriteLine("1.Update Customer Information");
-            System.Console.WriteLine("2.View Mobile Information");
-            System.Console.WriteLine("3.Cart Management");
-            System.Console.WriteLine("0.Exit");
-            System.Console.WriteLine("-----------------------------");
+            System.Console.WriteLine("1.Đặt hàng");
+            System.Console.WriteLine("2.Xem lịch sử đặt hàng");
+            System.Console.WriteLine("0.Quay lại");
+            System.Console.WriteLine("-----------------------------\n");
         }
     }
 }
