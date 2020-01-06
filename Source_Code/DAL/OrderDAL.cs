@@ -115,7 +115,7 @@ namespace DAL
             order.OrderCustomer.CustomerUsername = reader.GetString("Customer_Username");
             order.OrderCustomer.CustomerEmail = reader.GetString("Customer_email");
             order.OrderMobile.MobileID = reader.GetInt32("Mobile_id");
-            order.OrderMobile.MobileName = reader.GetString("Mobile_Name");
+            order.OrderMobile.MobileName = reader.GetString("Mobile_name");
             order.OrderMobile.MobilePrice = reader.GetDecimal("Mobile_Price");
             order.Amount = reader.GetInt32("Amount");
             order.OrderDate = reader.GetDateTime("Order_date");

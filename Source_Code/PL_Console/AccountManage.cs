@@ -125,8 +125,22 @@ namespace PL_Console
                                         order.OrderMobile.MobileID = Convert.ToInt32(Console.ReadLine());
                                         MobileBL mbBL = new MobileBL();
                                         Mobile mb = mbBL.GetMobilebyId(order.OrderMobile.MobileID);
-                                        if (mb.MobileName != null)
+                                        List<Mobile> Listmb = new List<Mobile>();
+                                        Listmb = mbBL.GetListMobile();
+                                        int flagg = 1;
+                                        foreach (var item in Listmb)
                                         {
+                                            if (order.OrderMobile.MobileID == item.MobileID)
+                                            {
+                                                flagg = 2;
+                                                
+                                                break;
+                                            }
+                                        }
+
+                                        if (flagg == 2)
+                                        {
+                                            
                                             while (true)
                                             {
                                                 System.Console.WriteLine("Số lượng muốn mua : ");
@@ -134,11 +148,11 @@ namespace PL_Console
                                                 if (order.Amount <= mb.MobileQuantity)
                                                 {
                                                     System.Console.WriteLine("Bạn chắc chắn muốn đặt chiếc điện thoại này??");
-                                                    System.Console.WriteLine("Mã điện thoại: ",mb.MobileID);
-                                                    System.Console.WriteLine("Tên điện thoại: ",mb.MobileName);
-                                                    System.Console.WriteLine("Đơn giá: ",mb.MobilePrice);
-                                                    System.Console.WriteLine("Số lượng: ",mb.MobileQuantity);
-                                                    System.Console.WriteLine("Tống giá: ",mb.MobilePrice * mb.MobileQuantity);
+                                                    System.Console.WriteLine("Mã điện thoại: " + mb.MobileID);
+                                                    System.Console.WriteLine("Tên điện thoại: " + mb.MobileName);
+                                                    System.Console.WriteLine("Đơn giá: " + mb.MobilePrice);
+                                                    System.Console.WriteLine("Số lượng: " + order.Amount);
+                                                    System.Console.WriteLine("Tống giá: " + mb.MobilePrice * order.Amount);
                                                     System.Console.WriteLine("Nhập Y nếu đồng ý hoặc phím bất kỳ khác nếu muốn huỷ bỏ");
                                                     select = Console.ReadLine();
                                                     if ((select == "y") || (select == "Y"))
@@ -175,10 +189,12 @@ namespace PL_Console
                                                         break;
                                                     }
                                                 }
+                                               break;
                                             }
                                         }
                                         else
                                         {
+                                            System.Console.WriteLine("Mã không chính xác");
                                             System.Console.WriteLine("Bấm Y nếu muốn nhập lại mã");
                                             select = Console.ReadLine();
                                             if ((select == "y") || (select == "Y"))
@@ -190,6 +206,7 @@ namespace PL_Console
                                                 break;
                                             }
                                         }
+                                        break;
                                     }
 
                                 }
@@ -204,24 +221,28 @@ namespace PL_Console
                                     }
                                     else
                                     {
-                                        if (listOrders.Count <=0)
+                                        if (listOrders.Count <= 0)
                                         {
                                             System.Console.WriteLine("Bạn chưa đặt hàng bao giờ");
                                             System.Console.WriteLine("Hãy quay trở lại để đặt hàng");
                                         }
                                         else
                                         {
-                                        var table = new ConsoleTable("Tài khoản", "Email", "Mã hoá đơn", "Mã Sản phẩm"
-                                        , "Tên sản phẩm", "Số lượng", "tổng tiền", "Ngày đặt");
-                                        foreach (var item in listOrders)
-                                        {
-                                            table.AddRow(item.OrderCustomer.CustomerUsername, item.OrderCustomer.CustomerEmail, item.OrderID, item.OrderMobile.MobileID, item.OrderMobile.MobileName, item.Amount, item.Amount * item.OrderMobile.MobilePrice, item.OrderDate);
-                                        }
-                                        table.Write(Format.Alternative);
+                                            var table = new ConsoleTable("Tài khoản", "Email", "Mã hoá đơn", "Mã Sản phẩm"
+                                            , "Tên sản phẩm", "Số lượng", "tổng tiền", "Ngày đặt");
+                                            foreach (var item in listOrders)
+                                            {
+                                                table.AddRow(item.OrderCustomer.CustomerUsername, item.OrderCustomer.CustomerEmail, item.OrderID, item.OrderMobile.MobileID, item.OrderMobile.MobileName, item.Amount, item.Amount * item.OrderMobile.MobilePrice, item.OrderDate);
+                                            }
+                                            table.Write(Format.Alternative);
                                         }
                                     }
                                     System.Console.WriteLine("\nBấm phím bất kỳ để trở lại");
                                     Console.ReadKey();
+                                }
+                                if (select == "0")
+                                {
+                                    break;
                                 }
 
                             }
